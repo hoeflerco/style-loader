@@ -120,6 +120,7 @@ function insertStyleElement(options, styleElement) {
 
 function removeStyleElement(styleElement) {
 	styleElement.parentNode.removeChild(styleElement);
+	if (styleElement.parentNode === null) return false;
 	var idx = styleElementsInsertedAtTop.indexOf(styleElement);
 	if(idx >= 0) {
 		styleElementsInsertedAtTop.splice(idx, 1);
