@@ -119,6 +119,7 @@ function insertStyleElement(options, styleElement) {
 }
 
 function removeStyleElement(styleElement) {
+	if (styleElement.parentNode === null) return false;
 	styleElement.parentNode.removeChild(styleElement);
 	var idx = styleElementsInsertedAtTop.indexOf(styleElement);
 	if(idx >= 0) {
